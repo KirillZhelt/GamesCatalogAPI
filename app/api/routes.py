@@ -1,10 +1,13 @@
 from flask import jsonify
 
+from app import db
 from app.api import bp
+from app.models import Game, Favourite
 
 
 @bp.route('/')
 def index():
+    print(Game.query.first().favourites)
     return 'Hello World'
 
 
